@@ -1,0 +1,70 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: first.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 35s max duration (incl. graceful stop):
+              * default: 2 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 2/2 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 2 VUs  1.0s/5s
+
+running (02.0s), 2/2 VUs, 2 complete and 0 interrupted iterations
+default   [  40% ] 2 VUs  2.0s/5s
+
+running (03.0s), 2/2 VUs, 4 complete and 0 interrupted iterations
+default   [  60% ] 2 VUs  3.0s/5s
+
+running (04.0s), 2/2 VUs, 6 complete and 0 interrupted iterations
+default   [  80% ] 2 VUs  4.0s/5s
+
+running (05.0s), 2/2 VUs, 8 complete and 0 interrupted iterations
+default   [ 100% ] 2 VUs  5.0s/5s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<2000' p(95)=12.4ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 10      1.949014/s
+    checks_succeeded...: 100.00% 10 out of 10
+    checks_failed......: 0.00%   0 out of 10
+
+    ✓ status is 200
+
+    HTTP
+    http_req_duration..............: avg=8.4ms min=2.81ms med=9.1ms max=12.62ms p(90)=12.17ms p(95)=12.4ms
+      { expected_response:true }...: avg=8.4ms min=2.81ms med=9.1ms max=12.62ms p(90)=12.17ms p(95)=12.4ms
+    http_req_failed................: 0.00%  0 out of 10
+    http_reqs......................: 10     1.949014/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.02s min=1.01s  med=1.02s max=1.03s   p(90)=1.03s   p(95)=1.03s 
+    iterations.....................: 10     1.949014/s
+    vus............................: 2      min=2       max=2
+    vus_max........................: 2      min=2       max=2
+
+    NETWORK
+    data_received..................: 3.1 kB 598 B/s
+    data_sent......................: 700 B  136 B/s
+
+
+
+
+running (05.1s), 0/2 VUs, 10 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  5s

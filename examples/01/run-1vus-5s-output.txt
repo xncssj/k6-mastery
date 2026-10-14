@@ -1,0 +1,70 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: first.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 35s max duration (incl. graceful stop):
+              * default: 1 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 1 VUs  1.0s/5s
+
+running (02.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+default   [  40% ] 1 VUs  2.0s/5s
+
+running (03.0s), 1/1 VUs, 2 complete and 0 interrupted iterations
+default   [  60% ] 1 VUs  3.0s/5s
+
+running (04.0s), 1/1 VUs, 3 complete and 0 interrupted iterations
+default   [  80% ] 1 VUs  4.0s/5s
+
+running (05.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+default   [ 100% ] 1 VUs  5s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<2000' p(95)=6.34ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 5       0.988419/s
+    checks_succeeded...: 100.00% 5 out of 5
+    checks_failed......: 0.00%   0 out of 5
+
+    ✓ status is 200
+
+    HTTP
+    http_req_duration..............: avg=4.44ms min=2.02ms med=4.8ms max=6.51ms p(90)=6.17ms p(95)=6.34ms
+      { expected_response:true }...: avg=4.44ms min=2.02ms med=4.8ms max=6.51ms p(90)=6.17ms p(95)=6.34ms
+    http_req_failed................: 0.00%  0 out of 5
+    http_reqs......................: 5      0.988419/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.01s  min=1s     med=1.01s max=1.01s  p(90)=1.01s  p(95)=1.01s 
+    iterations.....................: 5      0.988419/s
+    vus............................: 1      min=1      max=1
+    vus_max........................: 1      min=1      max=1
+
+    NETWORK
+    data_received..................: 1.5 kB 303 B/s
+    data_sent......................: 350 B  69 B/s
+
+
+
+
+running (05.1s), 0/1 VUs, 5 complete and 0 interrupted iterations
+default ✓ [ 100% ] 1 VUs  5s

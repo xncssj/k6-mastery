@@ -1,0 +1,73 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: sse_demo.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 35s max duration (incl. graceful stop):
+              * default: 1 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 1 VUs  1.0s/5s
+
+running (02.0s), 1/1 VUs, 0 complete and 0 interrupted iterations
+default   [  40% ] 1 VUs  2.0s/5s
+
+running (03.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+default   [  60% ] 1 VUs  3.0s/5s
+
+running (04.0s), 1/1 VUs, 1 complete and 0 interrupted iterations
+default   [  80% ] 1 VUs  4.0s/5s
+
+running (05.0s), 1/1 VUs, 2 complete and 0 interrupted iterations
+default   [ 100% ] 1 VUs  5.0s/5s
+
+running (06.0s), 1/1 VUs, 2 complete and 0 interrupted iterations
+default ↓ [ 100% ] 1 VUs  5s
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 12      1.9213/s
+    checks_succeeded...: 100.00% 12 out of 12
+    checks_failed......: 0.00%   0 out of 12
+
+    ✓ login status is 200
+    ✓ sse status is 200
+    ✓ sse content type
+    ✓ sse received 5 events
+
+    HTTP
+    http_req_duration..............: avg=532.86ms min=22.08ms med=527.46ms max=1.06s p(90)=1.04s p(95)=1.05s
+      { expected_response:true }...: avg=532.86ms min=22.08ms med=527.46ms max=1.06s p(90)=1.04s p(95)=1.05s
+    http_req_failed................: 0.00%  0 out of 6
+    http_reqs......................: 6      0.96065/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.08s    min=2.06s   med=2.08s    max=2.09s p(90)=2.09s p(95)=2.09s
+    iterations.....................: 3      0.480325/s
+    vus............................: 1      min=1      max=1
+    vus_max........................: 1      min=1      max=1
+
+    NETWORK
+    data_received..................: 2.7 kB 430 B/s
+    data_sent......................: 849 B  136 B/s
+
+
+
+
+running (06.2s), 0/1 VUs, 3 complete and 0 interrupted iterations
+default ✓ [ 100% ] 1 VUs  5s

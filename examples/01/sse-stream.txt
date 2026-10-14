@@ -1,0 +1,10 @@
+data: {"event": "status", "ticket": {"id": 1, "title": "登录页验证码不刷新", "status": "open"}}
+
+data: {"event": "status", "ticket": {"id": 2, "title": "导出报表超时", "status": "processing"}}
+
+data: {"event": "status", "ticket": {"id": 3, "title": "工单列表分页错乱", "status": "open"}}
+
+data: {"event": "status", "ticket": {"id": 4, "title": "消息通知重复推送", "status": "closed"}}
+
+data: {"event": "status", "ticket": {"id": 5, "title": "附件上传失败", "status": "processing"}}
+

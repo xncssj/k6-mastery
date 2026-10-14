@@ -1,0 +1,80 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: ticket_flow.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 35s max duration (incl. graceful stop):
+              * default: 2 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 2/2 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 2 VUs  1.0s/5s
+
+running (02.1s), 2/2 VUs, 2 complete and 0 interrupted iterations
+default   [  42% ] 2 VUs  2.1s/5s
+
+running (03.0s), 2/2 VUs, 4 complete and 0 interrupted iterations
+default   [  60% ] 2 VUs  3.0s/5s
+
+running (04.0s), 2/2 VUs, 6 complete and 0 interrupted iterations
+default   [  80% ] 2 VUs  4.0s/5s
+
+running (05.0s), 2/2 VUs, 8 complete and 0 interrupted iterations
+default   [ 100% ] 2 VUs  5.0s/5s
+
+running (06.0s), 1/2 VUs, 9 complete and 0 interrupted iterations
+default ↓ [ 100% ] 2 VUs  5s
+
+running (06.1s), 0/2 VUs, 10 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  5s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<500' p(95)=72.92ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 50      8.192695/s
+    checks_succeeded...: 100.00% 50 out of 50
+    checks_failed......: 0.00%   0 out of 50
+
+    ✓ login status is 200
+    ✓ list status is 200
+    ✓ list has tickets
+    ✓ detail status is 200
+    ✓ create status is 201
+
+    HTTP
+    http_req_duration..............: avg=41.56ms min=23.65ms med=37.58ms max=84.3ms p(90)=64.73ms p(95)=72.92ms
+      { expected_response:true }...: avg=41.56ms min=23.65ms med=37.58ms max=84.3ms p(90)=64.73ms p(95)=72.92ms
+    http_req_failed................: 0.00%  0 out of 40
+    http_reqs......................: 40     6.554156/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.2s    min=1.12s   med=1.2s    max=1.34s  p(90)=1.27s   p(95)=1.3s   
+    iterations.....................: 10     1.638539/s
+    vus............................: 1      min=1       max=2
+    vus_max........................: 2      min=2       max=2
+
+    NETWORK
+    data_received..................: 19 kB  3.2 kB/s
+    data_sent......................: 6.1 kB 1.0 kB/s
+
+
+
+
+running (06.1s), 0/2 VUs, 10 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  5s

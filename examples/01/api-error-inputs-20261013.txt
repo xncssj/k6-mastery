@@ -1,0 +1,19 @@
+# k6 专栏第 01 篇：模拟工单服务异常输入实测（2026-10-13）
+# 环境：Windows/amd64，Python 3.13.2，curl 8.15.0，ticket_service.py 输入类型校验增强后
+# 说明：四类输入在此前版本会触发服务端 AttributeError 并掐断连接（curl 空回复，退出码 52）
+
+$ curl -s -w "[HTTP %{http_code}]" -X POST http://127.0.0.1:8898/login -H "Content-Type: application/json" -d '[1]'
+{"error": "request body must be a JSON object"}
+[HTTP 400]
+
+$ curl -s -w "[HTTP %{http_code}]" -X POST http://127.0.0.1:8898/login -H "Content-Type: application/json" -d '"demo"'
+{"error": "request body must be a JSON object"}
+[HTTP 400]
+
+$ curl -s -w "[HTTP %{http_code}]" -X POST http://127.0.0.1:8898/tickets -H "Content-Type: application/json" -H "Authorization: Bearer demo-token-0001" -d '[]'
+{"error": "request body must be a JSON object"}
+[HTTP 400]
+
+$ curl -s -w "[HTTP %{http_code}]" -X POST http://127.0.0.1:8898/tickets -H "Content-Type: application/json" -H "Authorization: Bearer demo-token-0001" -d '{"title":123}'
+{"error": "title is required"}
+[HTTP 400]
