@@ -171,4 +171,5 @@ k6 run -e BASE_URL=http://127.0.0.1:8899 first.js
 </p>
 
 - 📣 微信公众号：**7DGroup**
+- 📚 专栏配套代码组织：[github.com/xncssj](https://github.com/xncssj)（本仓库所在组织）
 - 🏢 主组织：[github.com/7dgroup-ai](https://github.com/7dgroup-ai)
