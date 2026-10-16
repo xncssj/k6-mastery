@@ -47,5 +47,5 @@ curl http://127.0.0.1:8898/
 ## 各篇使用
 
 - 第 01 篇：`01/first.js` 最小脚本打回显服务 `/`，配两轮命令行对照实跑记录（`01/本地实跑记录-2026-10-13.md`）；`01/ticket_flow.js` 业务流脚本打模拟工单服务（登录 → 列表 → 详情 → 创建），`01/sse_demo.js` 收 SSE 事件流并按 `data:` 计数断言，测试案例与各轮实跑输出见 `01/测试案例-工单模拟服务.md`。
-- 第 02 篇：`02/` 下 5 个生命周期脚本（`lifecycle.js`、`setup_isolation.js`、`setup_failure.js`、`init_forbidden.js`、`summary_hook.js`）打模拟工单服务，逐轮实跑输出与 `summary.json` 生成物同目录，实跑记录与测试案例见 `02/本地实跑记录-2026-10-14.md`、`02/测试案例-生命周期脚本.md`，生命周期边界探针（init 求值计数、迭代内异常、主动中止）归档于 `02/探针记录-生命周期边界-2026-10-16.md`。
+- 第 02 篇：`02/` 下 5 个生命周期脚本（`lifecycle.js`、`setup_isolation.js`、`setup_failure.js`、`init_forbidden.js`、`summary_hook.js`；其中 `lifecycle.js`、`setup_failure.js`、`summary_hook.js` 打模拟工单服务，`setup_isolation.js` 纯内存、`init_forbidden.js` 被 k6 前置拒绝，均不发请求），逐轮实跑输出与 `summary.json` 生成物同目录，实跑记录与测试案例见 `02/本地实跑记录-2026-10-14.md`、`02/测试案例-生命周期脚本.md`，生命周期边界探针（init 求值计数、迭代内异常、主动中止）归档于 `02/探针记录-生命周期边界-2026-10-16.md`。
 - 第 03 篇：请求方法、鉴权、Cookie、参数化示例的默认目标（回显服务，`BASE_URL` 默认 `http://127.0.0.1:8899`）。
