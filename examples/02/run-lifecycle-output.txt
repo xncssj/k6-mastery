@@ -1,0 +1,78 @@
+time="2026-10-14T19:47:35+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=0）" source=console
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: lifecycle.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 6 iterations shared among 2 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2026-10-14T19:47:35+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=1）" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=2）" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=0）" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[setup] 全局一次：先登录拿令牌" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[setup] 登录状态=200，令牌=demo-token-0001" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[default] VU1 第1次迭代" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[default] VU2 第1次迭代" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[default] VU1 第2次迭代" source=console
+time="2026-10-14T19:47:36+08:00" level=info msg="[default] VU2 第2次迭代" source=console
+
+running (00m01.0s), 2/2 VUs, 2 complete and 0 interrupted iterations
+default   [  33% ] 2 VUs  00m00.9s/10m0s  2/6 shared iters
+time="2026-10-14T19:47:37+08:00" level=info msg="[default] VU2 第3次迭代" source=console
+time="2026-10-14T19:47:37+08:00" level=info msg="[default] VU1 第3次迭代" source=console
+time="2026-10-14T19:47:37+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=0）" source=console
+time="2026-10-14T19:47:37+08:00" level=info msg="[teardown] 全局一次：令牌已拿到（demo-token-0001）" source=console
+time="2026-10-14T19:47:37+08:00" level=info msg="[init] VU 初始化：init 上下文求值（当前 VU=0）" source=console
+
+running (00m01.8s), 0/2 VUs, 6 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  00m01.7s/10m0s  6/6 shared iters
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<500' p(95)=46.7ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 12      6.66551/s
+    checks_succeeded...: 100.00% 12 out of 12
+    checks_failed......: 0.00%   0 out of 12
+
+    ✓ tickets status is 200
+    ✓ tickets total > 0
+
+    HTTP
+    http_req_duration..............: avg=37.18ms  min=22.62ms  med=40.35ms  max=47.02ms  p(90)=46.38ms  p(95)=46.7ms  
+      { expected_response:true }...: avg=37.18ms  min=22.62ms  med=40.35ms  max=47.02ms  p(90)=46.38ms  p(95)=46.7ms  
+    http_req_failed................: 0.00%  0 out of 7
+    http_reqs......................: 7      3.888214/s
+
+    EXECUTION
+    iteration_duration.............: avg=560.65ms min=545.69ms med=561.65ms max=581.29ms p(90)=573.65ms p(95)=577.47ms
+    iterations.....................: 6      3.332755/s
+    vus............................: 2      min=2      max=2
+    vus_max........................: 2      min=2      max=2
+
+    NETWORK
+    data_received..................: 3.4 kB 1.9 kB/s
+    data_sent......................: 864 B  480 B/s
+
+
+
+
+running (00m01.8s), 0/2 VUs, 6 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  00m01.7s/10m0s  6/6 shared iters
+退出码=0

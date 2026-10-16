@@ -1,0 +1,45 @@
+time="2026-10-14T19:48:06+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: setup_isolation.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 4 iterations shared among 2 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2026-10-14T19:48:07+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[setup] 构造共享数据：count=0" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[default] VU2 自己副本 count=1" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[default] VU2 自己副本 count=2" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[default] VU2 自己副本 count=3" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[default] VU2 自己副本 count=4" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[teardown] teardown 拿到的 count=0" source=console
+time="2026-10-14T19:48:07+08:00" level=info msg="[init] VU 初始化：本实验纯内存演示，不发请求" source=console
+
+
+  █ TOTAL RESULTS 
+
+    EXECUTION
+    iteration_duration...: avg=254.24µs min=0s med=0s max=1.01ms p(90)=711.9µs p(95)=864.44µs
+    iterations...........: 4   484.742723/s
+
+    NETWORK
+    data_received........: 0 B 0 B/s
+    data_sent............: 0 B 0 B/s
+
+
+
+
+running (00m00.0s), 0/2 VUs, 4 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  00m00.0s/10m0s  4/4 shared iters
+退出码=0

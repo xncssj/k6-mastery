@@ -1,0 +1,37 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: setup_failure.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 1 iterations shared among 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2026-10-14T19:48:21+08:00" level=info msg="[setup] 用错误密码登录，预期拿到 401" source=console
+time="2026-10-14T19:48:21+08:00" level=info msg="[setup] 登录状态=401，准备抛出异常" source=console
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration...: avg=23.97ms min=23.97ms med=23.97ms max=23.97ms p(90)=23.97ms p(95)=23.97ms
+    http_req_failed.....: 100.00% 1 out of 1
+    http_reqs...........: 1       4.5926/s
+
+    NETWORK
+    data_received.......: 205 B   942 B/s
+    data_sent...........: 175 B   804 B/s
+
+
+
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2026-10-14T19:48:24+08:00" level=error msg="Error: 鉴权失败示意\n\tat setup (file:///<本机路径>/examples/02/setup_failure.js:19:9(39))\n" hint="script exception" source=stacktrace
+退出码=107

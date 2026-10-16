@@ -1,0 +1,3 @@
+time="2026-10-14T19:48:48+08:00" level=info msg="[init] 尝试在 init 上下文直接发请求（教学演示，预期被 k6 拒绝）" source=console
+time="2026-10-14T19:48:48+08:00" level=error msg="GoError: Making http requests in the init context is not supported\n\tat go.k6.io/k6/v2/js/modules/k6/http.(*RootModule).NewModuleInstance.func2 (native)\n\tat file:///<本机路径>/examples/02/init_forbidden.js:7:9(27)\n" hint="script exception" source=stacktrace
+退出码=107

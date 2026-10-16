@@ -1,0 +1,22 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: summary_hook.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 2 iterations shared among 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2026-10-14T19:49:09+08:00" level=info msg="[summary] 迭代数=2" source=console
+[summary] 自拼摘要（默认摘要已被 handleSummary 的 stdout 键替换）
+迭代次数=2，HTTP 请求数=2，检查通过=2 失败=0
+http_req_duration p(95)=26.014595ms
+running (00m00.1s), 0/1 VUs, 2 complete and 0 interrupted iterations
+default ✓ [ 100% ] 1 VUs  00m00.1s/10m0s  2/2 shared iters
+退出码=0
